@@ -1,0 +1,40 @@
+Set the ulimit values
+ulimit -s 10240
+ulimit -i 62591
+ulimit -n 10240
+
+Set the security values
+vi /etc/security/limits.conf
+mqm hard nproc 4096
+mqm soft nproc 4096
+mqm hard nofile 10240
+mqm soft nofile 10240
+
+Extract the file
+tar -xzvf <IBM_MQ9.3.tar.gz>
+
+It will extract the folder name as MQSERVER
+
+Change the directory to MQSERVER.
+
+Accept the license using the command ---> ./mqlicense.sh -accept
+
+After accepting the license, install the packages.
+rpm -ivh < package_names>
+
+After installing the packages, set the installation path
+/opt/mqm/bin/setmqinst -i -n Installation1
+
+To check the version
+dspmqver
+
+#####################################################################
+
+To unset the MQ
+/opt/mqm/bin/setmqinst -x -n Installation1
+
+To uninstall MQ.
+rpm -qa | grep 9.3.0.29 | xargs rpm -ev  -- MQ9.3 and below
+
+
+
