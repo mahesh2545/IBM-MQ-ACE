@@ -38,3 +38,4 @@ rpm -qa | grep 9.3.0.29 | xargs rpm -ev  -- MQ9.3 and below
 
 
 Delete the /var/mqm Path & /opt/mqm Path
+This is sample
